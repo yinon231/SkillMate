@@ -1,10 +1,18 @@
-import { useState } from "react";
 import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+import Dashboard from "./Pages/Dashboard";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Login />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<Login />} />
+        </Routes>
+      </Router>
     </>
   );
 }
